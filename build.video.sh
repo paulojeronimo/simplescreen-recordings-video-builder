@@ -11,28 +11,23 @@ set -eou pipefail
 cd "`dirname "$0"`"
 
 basename=`basename "$PWD"`
-ffmpeg_file=${ffmpeg_file:-join.ffmpeg}
-v1_mkv=${v1_mkv:-$basename.1.mkv}
-v2_mkv=${v2_mkv:-$basename.2.mkv}
-v2_mp4=${v2_mp4:-$basename.2.mp4}
-video_parts_prefix=${video_parts_prefix:-simplescreenrecorder-}
-image_png=${image_png:-$basename.png}
-image_screen_time=${image_screen_time:-5}
-ff_log=ffmpeg.log
+config=./config.sh
+[ -f $config ] || config=./config.sample.sh
+source $config
 
-[ -f $ffmpeg_file ] && echo File $ffmpeg_file already exists. || {
-  echo Generating the ffmpeg_file \($ffmpeg_file\) ...
-  > $ffmpeg_file
+[ -f $video_parts_file ] && echo File $video_parts_file already exists. || {
+  echo Generating the video_parts_file \($video_parts_file\) ...
+  > $video_parts_file
   for v in $(ls $video_parts_prefix*)
   do
-    echo "file $v" >> $ffmpeg_file
+    echo "file $v" >> $video_parts_file
   done
 } 
 
 [ -f $v1_mkv ] && echo File $v1_mkv already exists. || {
   echo Generating the video v1_mkv \($v1_mkv\) ...
   ffmpeg -y -loglevel info -f concat -safe 0 \
-    -i $ffmpeg_file -c copy $v1_mkv &> $ff_log
+    -i $video_parts_file -c copy $v1_mkv &> $ff_log
 }
 
 [ -f $v2_mkv ] && echo File $v2_mkv alread exists. || {
