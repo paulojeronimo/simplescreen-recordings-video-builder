@@ -1,5 +1,5 @@
 /build
-/join.ffmpeg
+/*.ffmpeg
 /*.png
 /*.mkv
 /*.mp4

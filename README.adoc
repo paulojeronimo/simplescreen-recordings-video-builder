@@ -1,3 +1,7 @@
+ifdef::env-github[]
+https://paulojeronimo.com/terminal-video-builder
+endif::[]
+ifndef::env-github[]
 = A Bash script that concatenates my screen recordings into a single video
 Paulo Jerônimo <paulojeronimo@gmail.com>
 :idprefix:
@@ -75,7 +79,7 @@ $ git clone $repo $video && cd $video
 
 $ # Creating links for the files that the builder will use
 $ for f in ../simplescreenrecorder-2023-02-14_1*; do ln -s $f; done
-$ ln -s ~/Pictures/Canva/$video.png .
+$ ln -s ~/Pictures/Canva/$video.png
 
 $ # Building the video
 $ ./build.video.sh
@@ -105,3 +109,4 @@ measurement, or the build process will crash.
 == Related projects
 
 * https://paulojeronimo.com/sitemap/#ffmpeg
+endif:[]
