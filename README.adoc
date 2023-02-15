@@ -11,17 +11,17 @@ Paulo Jerônimo <paulojeronimo@gmail.com>
 :ffmpeg: https://ffmpeg.org/[ffmpeg]
 :SimpleScreenRecorder: https://github.com/MaartenBaert/ssr[SimpleScreenRecorder]
 :project-name: terminal-video-builder
-:project-version: v1.0.2
+:project-version: v1.0.3
 :uri-project-https: https://github.com/paulojeronimo/{project-name}
 :uri-project-git: git@github.com:paulojeronimo/{project-name}
 :uri-script: {uri-project-https}/blob/main/build.video.sh
 
 == About this project
 
-{uri-project-https}[This project] is *a straightforward video build system*,
-written in Bash, that uses {ffmpeg} to create a video composed of some
-other parts like other videos and an initial image displayed for some
-seconds before the video.
+{uri-project-https}[This {project-name} project] is *a straightforward
+video build system*, written in Bash, that uses {ffmpeg} to create a
+video composed of some other parts like other videos and an initial
+image displayed for some seconds before the video.
 
 The last update of this document was: {localdatetime}.
 
