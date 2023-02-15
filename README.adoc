@@ -60,7 +60,8 @@ becomes helpful for this situation.
 
 == How can I use it?
 
-These are my steps to rebuild the video created above at any time:
+These are my steps to rebuild the video created above at any time, using
+version `v1.0.0` of this project:
 
 [subs=attributes+]
 ----
@@ -76,6 +77,7 @@ $ rm -rf $video
 
 $ # Cloning the {project-name} project
 $ git clone $repo $video && cd $video
+$ git checkout v1.0.0
 
 $ # Creating links for the files that the builder will use
 $ for f in ../simplescreenrecorder-2023-02-14_1*; do ln -s $f; done
@@ -90,7 +92,7 @@ result:
 
 ----
 $ ls $video.*
-ChatGPT-MVP.1.mkv  ChatGPT-MVP.2.mkv  ChatGPT-MVP.2.mp4  ChatGPT-MVP.png
+ChatGPT-MVP.1.mkv  ChatGPT-MVP.mkv  ChatGPT-MVP.mp4  ChatGPT-MVP.png
 ----
 
 The final files to be published are named `ChatGPT-MVP.2.*`.
