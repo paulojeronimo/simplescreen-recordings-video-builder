@@ -1,18 +1,21 @@
-# Complete video, without the initial picture
+# The complete video without the initial picture
 v1_mkv=${v1_mkv:-$basename.1.mkv}
 
-# Complete video, including the initial picture
-v2_mkv=${v2_mkv:-$basename.2.mkv}
-v2_mp4=${v2_mp4:-$basename.2.mp4}
+# The complete video including the initial picture
+v2_mkv=${v2_mkv:-$basename.mkv}
+v2_mp4=${v2_mp4:-$basename.mp4}
 
-# Video parts prefix
+# The video parts prefix
 video_parts_prefix=${video_parts_prefix:-simplescreenrecorder-}
 
-# Video parts file (used by FFmpeg)
+# The image file that will be inserted at the start of the video
 image_png=${image_png:-$basename.png}
-image_screen_time=${image_screen_time:-5}
 
-# Video parts file
+# The amount of time that the video will show the image file
+image_screen_time=${image_screen_time:-1}
+
+# The video parts file
 video_parts_file=${video_parts_file:-video-parts.ffmpeg}
-# FFmpeg output log (for the last command only)
+
+# The generated FFmpeg output log (for the last command only)
 ff_log=ffmpeg.log
