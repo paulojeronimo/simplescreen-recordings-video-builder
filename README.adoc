@@ -11,6 +11,7 @@ Paulo Jerônimo <paulojeronimo@gmail.com>
 :ffmpeg: https://ffmpeg.org/[ffmpeg]
 :SimpleScreenRecorder: https://github.com/MaartenBaert/ssr[SimpleScreenRecorder]
 :project-name: terminal-video-builder
+:project-version: v1.0.1
 :uri-project-https: https://github.com/paulojeronimo/{project-name}
 :uri-project-git: git@github.com:paulojeronimo/{project-name}
 :uri-script: {uri-project-https}/blob/main/build.video.sh
@@ -61,7 +62,7 @@ becomes helpful for this situation.
 == How can I use it?
 
 These are my steps to rebuild the video created above at any time, using
-version `v1.0.0` of this project:
+version `{project-version}` of this project:
 
 [subs=attributes+]
 ----
@@ -77,7 +78,7 @@ $ rm -rf $video
 
 $ # Cloning the {project-name} project
 $ git clone $repo $video && cd $video
-$ git checkout v1.0.0
+$ git checkout {project-version}
 
 $ # Creating links for the files that the builder will use
 $ for f in ../simplescreenrecorder-2023-02-14_1*; do ln -s $f; done
@@ -95,7 +96,7 @@ $ ls $video.*
 ChatGPT-MVP.1.mkv  ChatGPT-MVP.mkv  ChatGPT-MVP.mp4  ChatGPT-MVP.png
 ----
 
-The final files to be published are named `ChatGPT-MVP.2.*`.
+The final files to be published somewhere are named `ChatGPT-MVP.*`.
 
 == Useful notes
 
