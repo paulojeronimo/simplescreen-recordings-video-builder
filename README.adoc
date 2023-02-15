@@ -11,7 +11,7 @@ Paulo Jerônimo <paulojeronimo@gmail.com>
 :ffmpeg: https://ffmpeg.org/[ffmpeg]
 :SimpleScreenRecorder: https://github.com/MaartenBaert/ssr[SimpleScreenRecorder]
 :project-name: terminal-video-builder
-:project-version: v1.0.1
+:project-version: v1.0.2
 :uri-project-https: https://github.com/paulojeronimo/{project-name}
 :uri-project-git: git@github.com:paulojeronimo/{project-name}
 :uri-script: {uri-project-https}/blob/main/build.video.sh
@@ -59,6 +59,7 @@ title="Embedded post"></iframe>
 As I intend to develop other videos using the same process, this project
 becomes helpful for this situation.
 
+[[example]]
 == How can I use it?
 
 These are my steps to rebuild the video created above at any time, using
@@ -104,12 +105,13 @@ The final files to be published somewhere are named `ChatGPT-MVP.*`.
 So, the Bash script is configured by following this rule.
 If your recorded videos have sound, observe the references in the Bash
 script and adapt it accordingly.
-. The recorded parts of the video that compose the single one were built
-  in the dimensions of 550 x 550 pixels.
-Remember that the initial image added to this video must have that exact
-measurement, or the build process will crash.
+. <<example,In this example>>, the recorded parts of the video that
+  compose the single one were built has the dimensions of 550 x 550
+pixels.
+So, you must observe that, in that case, the initial image added to this
+video must have that exact measurement, or the build process will crash.
 
 == Related projects
 
 * https://paulojeronimo.com/sitemap/#ffmpeg
-endif:[]
+endif::[]
