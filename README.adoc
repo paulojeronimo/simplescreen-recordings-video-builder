@@ -6,12 +6,14 @@ Paulo Jerônimo <paulojeronimo@gmail.com>
 :toc: left
 :ffmpeg: https://ffmpeg.org/[ffmpeg]
 :SimpleScreenRecorder: https://github.com/MaartenBaert/ssr[SimpleScreenRecorder]
-:uri-project: https://github.com/paulojeronimo/simplescreen-recordings-video-builder
-:uri-script: {uri-project}/blob/main/build.video.sh
+:project-name: terminal-video-builder
+:uri-project-https: https://github.com/paulojeronimo/{project-name}
+:uri-project-git: git@github.com:paulojeronimo/{project-name}
+:uri-script: {uri-project-https}/blob/main/build.video.sh
 
 == About this project
 
-{uri-project}[This project] is *a straightforward video build system*,
+{uri-project-https}[This project] is *a straightforward video build system*,
 written in Bash, that uses {ffmpeg} to create a video composed of some
 other parts like other videos and an initial image displayed for some
 seconds before the video.
@@ -58,13 +60,24 @@ These are my steps to rebuild the video created above at any time:
 
 [subs=attributes+]
 ----
+$ # Changing to the directory where SimpleScreenRecorder stores the videos
 $ cd ~/Videos/simplescreen-recordings
-$ repo=git@github.com:paulojeronimo/simplescreen-recordings-video-builder.git
+$ repo={uri-project-git}
+
+$ # Creating a variable with the name of the directory of my video
 $ video=ChatGPT-MVP
+
+$ # Removing the current video directory if it exits
 $ rm -rf $video
+
+$ # Cloning the {project-name} project
 $ git clone $repo $video && cd $video
+
+$ # Creating links for the files that the builder will use
 $ for f in ../simplescreenrecorder-2023-02-14_1*; do ln -s $f; done
-$ cp ~/Pictures/Canva/$video.png .
+$ ln -s ~/Pictures/Canva/$video.png .
+
+$ # Building the video
 $ ./build.video.sh
 ----
 
